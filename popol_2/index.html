@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이디야 사이트 - 2차 포폴</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    h1,
+    h2,
+    h3,
+    ul,
+    li,
+    a {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    body::before {
+        content: '';
+        /* 필수!!!! */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url(image/bg.png) no-repeat center top;
+        height: auto;
+        opacity: 0.3;
+        z-index: -1;
+    }
+
+    em {
+        font-style: normal
+    }
+
+    .ibx {
+        outline: 2px solid red;
+    }
+
+    .pbx {
+        outline: 2px dashed hotpink;
+    }
+
+    a {
+        text-decoration: none;
+        font-style: normal;
+    }
+
+    ul,
+    li {
+        list-style: none;
+        float: left;
+    }
+
+    .top {
+        height: 130px;
+    }
+
+    .top1 {
+        width: 1180px;
+        height: 130px;
+        margin: 0 auto;
+        outline: 2px dashed blue;
+    }
+
+    .toplm {
+        width: 48%;
+        height: 50px;
+        float: left;
+    }
+
+    .toplm a,
+    .toprm a {
+        font: bold 13px ng;
+        color: #838383;
+        letter-spacing: -0.3px;
+    }
+
+    .toplm ul {
+        list-style: none;
+        float: left;
+        margin: 0;
+        padding: 0;
+        margin-top: 19px;
+    }
+
+    .toplm ul li {
+        list-style: none;
+        float: left;
+        margin-right: 9px;
+    }
+
+    .toplm li+li::before {
+        content: url(image/util_line.gif);
+        margin-right: 10px;
+    }
+
+    .toprm {
+        width: 52%;
+        height: 50px;
+        float: left;
+    }
+
+    .toprm ul {
+        margin-top: 19px;
+        padding: 0;
+    }
+
+    .toprm>ul li {
+        margin-right: 14px;
+    }
+
+    .toprm>ul li+li::before {
+        content: url(image/util_line.gif);
+        margin-right: 17px;
+    }
+
+    .topico img {
+        margin-right: 5px;
+        margin-top: 1px;
+    }
+
+    .topico>ul {
+        margin-left: 5px;
+    }
+
+    .toplogo {
+        width: 18%;
+        height: 77px;
+        float: left;
+    }
+
+    .topmenu {
+        width: 82%;
+        height: 77px;
+        float: right;
+    }
+
+    .topsrh {
+        position: relative;
+        border: solid 1px #d9d9d9;
+        width: 159px;
+        height: 28px;
+        float: right;
+        margin-right: 7px;
+        margin-top: 17px;
+        overflow: hidden;
+    }
+
+    #korea {
+        position: absolute;
+        width: 100%;
+        font-size: 19px;
+        color: #999;
+        letter-spacing: 0px;
+        margin-left: 6px;
+        background: url(image/language_arrow.gif) no-repeat 129px 9px;
+    }
+
+    .lang li {
+        width: 158px;
+        height: 28px;
+        font: bold 13px ng;
+        font-size: 19px;
+        color: #999;
+        letter-spacing: 0px;
+        margin-left: 6px;
+        line-height: 28px;
+        display: block;
+    }
+
+    .lang {
+        margin-top: -1px;
+    }
+
+    .toplogo img {
+        margin-top: 29px;
+    }
+
+    .topmenu ul li {
+        font-size: 17px;
+        margin: 29px 17px 0 62px;
+        letter-spacing: -1px;
+    }
+
+    .topmenu ul li:last-child {
+        margin-left: 65px;
+        margin-right: 0;
+    }
+
+    .slide {
+        position: relative;
+        outline: 2px dashed blue;
+        height: 621px;
+        width: 1920px;
+        max-width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .slide ul {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 1100%;
+        height: 100%;
+
+    }
+
+    .slide li {
+        width: 9.09%;
+        height: 100%;
+
+    }
+
+    .slide li:nth-child(1) {
+        background: url(./image/img1.jpg) no-repeat center/auto 100%;
+    }
+
+    .slide li:nth-child(2) {
+        background: url(./image/img2.jpg) no-repeat center/auto 100%;
+    }
+
+    .slide li:nth-child(3) {
+        background: url(./image/img3.png) no-repeat center/auto 100%;
+    }
+
+    .section1 {
+        height: 621px;
+    }
+
+    .section2 {
+        height: 756px;
+        background: url(image/main_beanist_bg.gif) no-repeat center/cover;
+    }
+
+    .ban1>h2 {
+        font-family: 'Suez One', serif;
+        padding-top: 105px;
+        padding-left: 289px;
+        font-size: 42px;
+    }
+
+    #bini {
+        margin-top: 98px;
+        text-align: center;
+        font-size: 26px;
+        line-height: 41px;
+        color: #333;
+        font-weight: normal;
+    }
+    #bini>em{
+        font-weight: bold;
+    }
+
+    .ban1>h2>em {
+        color: #90470c;
+    }
+
+    .banimg {
+        width: 806px;
+        height: 281px;
+        outline: 2px dashed #666;
+        padding-top: 18px;
+        margin: 0 auto;
+    }
+
+    .ban1 {
+        width: 1180px;
+        height: 100%;
+        outline: 2px dashed blue;
+        margin: 0 auto;
+    }
+
+    .banimg>ul {
+        display: flex;
+        width: 100%;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .cof {
+        font-family: 'Gugi', cursive;
+        color: #90470c;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .cof>dd {
+        font-size: 15px;
+        margin: 0;
+        font-weight: normal;
+        color: #b98458;
+    }
+
+    .fac {
+        width: 1180px;
+        height: 100%;
+        margin: 0 auto;
+        outline: 2px dashed blue;
+    }
+
+    .faclogo {
+        margin-top: 90px;
+        margin-left: 49px;
+    }
+
+    .sbanico>ul {
+        width: 49px;
+        height: 16px;
+        outline: 2px solid red;
+        margin-top: 38px;
+        margin-left: -427px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sbanico>ul>li {
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        vertical-align: middle;
+        margin-top: 4px;
+    }
+
+    .sbanico>ul>li.on {
+        background-color: #90470c;
+    }
+
+    .section3 {
+        position: relative;
+        height: 459px;
+        background: url(image/dream_factory_bg.gif) repeat-y center/cover;
+    }
+
+    .fimg {
+        position: absolute;
+        right: -178px;
+        bottom: 0;
+    }
+
+    .fac>p {
+        font-size: 28px;
+        font-family: ng;
+        font-weight: bold;
+        color: #fff;
+
+    }
+
+    .EDIYA {
+        margin-top: 5px;
+        margin-left: 51px;
+        letter-spacing: 1.1px;
+        margin-bottom: 0;
+    }
+
+    .fac .EDIYA1 {
+        padding-top: 6px;
+        font-size: 15px;
+        padding-left: 51px;
+        line-height: 24px;
+        letter-spacing: 1.3px;
+    }
+
+    .fabtn {
+        width: 190px;
+        height: 44px;
+        border: solid 1px #FFFFFF;
+        float: left;
+        margin-right: 10px;
+        color: #fff;
+        text-align: center;
+        /* margin-top: 7px; */
+        padding-top: 11px;
+        box-sizing: border-box;
+    }
+
+    .fabtnset {
+        margin-top: 32px;
+        margin-left: 53px;
+    }
+
+    .section4 {
+        height: 500px;
+        background: url(./image/block02_bg.jpg) no-repeat center/cover;
+        height: 500px;
+    }
+
+    .coffe {
+        position: relative;
+    }
+
+    .coffe>p {
+        position: absolute;
+        font-size: 40px;
+        color: #fff;
+        font-family: ng;
+    }
+
+    .coffe>.A {
+        position: absolute;
+        top: 63px;
+        left: 228px;
+        font-family: ng;
+        font-weight: normal;
+        letter-spacing: 1.3px;
+    }
+
+    .B {
+        position: absolute;
+        top: 63px;
+        left: 658px;
+        letter-spacing: 2px;
+    }
+
+    .A::after {
+        display: block;
+        position: relative;
+        content: "";
+        width: 100px;
+        height: 1px;
+        background: #FFF;
+        margin-top: 51px;
+        left: 312px;
+    }
+
+    .coffe>h2 {
+        position: absolute;
+        bottom: 206px;
+        right: 321px;
+        color: #fff;
+        font-family: ng;
+        font-weight: normal;
+        letter-spacing: -1px;
+    }
+
+    .coffe>.fabtn {
+        position: absolute;
+        bottom: 113px;
+        left: 495px;
+    }
+
+    .section5 {
+        height: 458px;
+        background: url(image/company_bg.jpg) no-repeat center/cover;
+        opacity: .5;
+    }
+
+    .com {
+        height: 100%;
+    }
+
+    .com>p {
+        float: right;
+        padding-top: 36px;
+        font-size: 18px;
+        padding-right: 238px;
+        letter-spacing: -1.3px;
+        font-family: ng;
+        font-weight: normal;
+    }
+
+    .com>h2 {
+        margin-left: 583px;
+        font-size: 42px;
+        padding-top: 86px;
+        letter-spacing: 0.9px;
+        line-height: 51px;
+        font-family: ng;
+        font-weight: normal;
+        color: #fff;
+    }
+
+    .fabtnset2 {
+        margin-top: 14px;
+        margin-left: 586px;
+    }
+
+    .fabtnset2>li:nth-child(3) {
+        margin: 0;
+    }
+
+
+    .section6 {
+        height: 800px;
+    }
+
+    .moveimg {
+        width: 100%;
+        height: 100%;
+        outline: 3px dashed blue;
+        background: url(image/block03_bg.jpg) no-repeat right/cover;
+        background-attachment: fixed;
+        opacity: .4;
+    }
+
+    .moveimg>h2,
+    h3 {
+        color: #fff;
+        text-align: center;
+        font-size: 43px;
+        padding-top: 100px;
+        font-family: ng;
+        font-weight: normal;
+    }
+
+    .moveimg>h2>span {
+        font-weight: bold;
+        margin-right: 5px;
+    }
+
+    .moveimg>h3 {
+        padding-top: 13px;
+        font-size: 24px;
+        letter-spacing: -0.7px;
+    }
+
+    .moveimg>h3::after {
+        position: relative;
+        content: '';
+        display: block;
+        width: 100px;
+        height: 1px;
+        background-color: #fff;
+        margin: 57px auto;
+    }
+
+    .section7 {
+        height: 1055.88px;
+    }
+
+    .section72 {
+        width: 1180px;
+        height: 100%;
+        margin: 0 auto;
+        outline: 2px dashed blue;
+    }
+
+    .section8 {
+        height: 440px;
+    }
+
+    .section9 {
+        height: 349px;
+    }
+
+    .footer10 {
+        height: 257px;
+    }
+</style>
+
+<body>
+    <!-- 1. 상단메뉴 -->
+    <header class="top ibx">
+        <div class="top1">
+            <!-- 1-1. 왼쪽상단메뉴 -->
+            <div class="toplm pbx">
+                <ul>
+                    <li><a href="#">브랜드 사이트</a></li>
+                    <li><a href="#">기업 사이트</a></li>
+                    <li><a href="#">창업안내</a></li>
+                </ul>
+            </div>
+            <!-- 1-2. 오른쪽 상단메뉴 -->
+            <div class="toprm pbx">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">매장찾기</a></li>
+                    <li><a href="#">고객의 소리</a></li>
+                </ul>
+                <div class="topico">
+                    <ul>
+                        <li><a href="#">
+                                <img src="image/top_sns01.gif" alt="블로그">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="image/top_sns02.gif" alt="인스타그램">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="image/top_sns03.gif" alt="페이스북">
+                            </a></li>
+                        <li><a href="#">
+                                <img src="image/top_sns04.gif" alt="유튜브">
+                            </a></li>
+                    </ul>
+                    <div class="topsrh">
+                        <a href="#" id="korea">Korean</a>
+                        <ul class="lang">
+                            <li>Korean</li>
+                            <li>English</li>
+                            <li>Chinese</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 1-3. 왼쪽 이디야 로고 -->
+            <div class="toplogo pbx">
+                <img src="image/top_logo.gif" alt="이디야상단로고">
+            </div>
+            <!-- 1-4. 메인상단바 -->
+            <div class="topmenu pbx">
+                <div>
+                    <ul>
+                        <li><a href="#">메뉴</a></li>
+                        <li><a href="#">이디야멤버스</a></li>
+                        <li><a href="#">기프트카드</a></li>
+                        <li><a href="#">이디야커피랩</a></li>
+                        <li><a href="#">이디야컬쳐랩</a></li>
+                        <li><a href="#">이디야 소식</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 2. 베너1 -->
+    <section class="section1 ibx">
+        <div class="slide">
+            <ul>
+                <li><a href="#">
+                    </a></li>
+                <li><a href="#">
+                    </a></li>
+                <li><a href="#">
+                    </a></li>
+                <li><a href="#">
+                    </a></li>
+                <li><a href="#">
+                    </a></li>
+                <li><a href="#">
+                    </a></li>
+                <li><a href="#">
+                    </a></li>
+                <li><a href="#">
+                    </a></li>
+                <li><a href="#">
+                    </a></li>
+                <li><a href="#">
+                    </a></li>
+                <li><a href="#">
+                    </a></li>
+            </ul>
+
+        </div>
+
+    </section>
+    <!-- 3. 베너2 -->
+    <section class="section2 ibx">
+        <div class="ban1">
+            <h2>
+                <em>BEANIST</em>
+                INFORMATION CARD
+            </h2>
+            <h4 id=bini>
+                비니스트는
+                <em>BEAN+Specialist</em>
+                의 합성어로 <br>
+                <em>오직 커피만을 생각해온 커피 전문가</em>
+                를 의미합니다.
+            </h4>
+            <div class="slideban1">
+                <div class="banimg">
+                    <ul>
+                        <li><a href="#">
+                                <img src="image/main_beanist_ame01.png" alt="">
+                                <dl class="cof">
+                                    <dt>비니스트 오리지널 아메리카노</dt>
+                                    <dd>Beanist Original Americano</dd>
+                                </dl>
+                            </a></li>
+                        <li><a href="#">
+                                <img src="image/main_beanist_ame02.png" alt="">
+                                <dl class="cof">
+                                    <dt>비니스트 마일드 아메리카노</dt>
+                                    <dd>Beanist Mild Americano</dd>
+                                </dl>
+                            </a></li>
+                        <li><a href="#">
+                                <img src="image/main_beanist_ame03.png" alt="">
+                                <dl class="cof">
+                                    <dt>비니스트 스페셜 아메리카노</dt>
+                                    <dd>Beanist Special Americano</dd>
+                                </dl>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sbanico">
+                <ul>
+                    <li class="on"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- 4. 베너3 -->
+    <section class="section3 ibx">
+        <div class="fac">
+            <img src="image/dream_factory_txt.png" alt="" class="faclogo">
+            <p class="EDIYA">
+                EDIYA COFFEE
+            </p>
+            <p class="EDIYA1">
+                최첨단 시설에서 탄생하는 고품질의 원두로 <br>
+                최고의 커피맛을 고객들에게 제공합니다.
+            </p>
+            <div class="fabtnset">
+                <div class="fabtn">드림 팩토리</div>
+                <div class="fabtn">드림 물류센터</div>
+            </div>
+            <img src="image/dream_factory.png" alt="공장이미지" class="fimg">
+        </div>
+    </section>
+    <!-- 5. 베너4 -->
+    <section class="section4 ibx">
+        <div class="coffe fac">
+            <div class="cofimg"></div>
+            <p class="A">ALWAYS BESIDE YOU, </p>
+            <p class="B">EDIYA COFFEE</p>
+            <h2>늘 당신 곁에, 이디야 커피의 다양한 메뉴를 맛보세요.</h2>
+            <div class="fabtn">메뉴보기</div>
+        </div>
+    </section>
+    <!-- 6. 베너5 -->
+    <section class="section5 ibx">
+        <div class="fac com">
+            <h2>고객과 가맹점주, 협력사의 <br>
+                상생의 가치를 실천합니다.</h2>
+            <p>해외에 로열티를 내지 않는 순수한 국내브랜드로 <br>
+                품질좋고 맛있는 정직한 커피를 제공합니다.
+            </p>
+            <ul class="fabtnset2">
+                <li class="fabtn">창업안내</li>
+                <li class="fabtn">창업설명회 안내</li>
+                <li class="fabtn">브랜드소개</li>
+            </ul>
+        </div>
+    </section>
+    <!-- 7. 베너6 -->
+    <section class="section6 ibx">
+        <div class="moveimg">
+            <h2>EDIYA <span>CULTURE LAB</span></h2>
+            <h3>커피를 더 특별하게 만드는 문화가 시작되는 공간</h3>
+            <div class="grap"></div>
+        </div>
+    </section>
+    <!-- 8. 베너7 -->
+    <section class="section7 ibx">
+        <div class="section72 ">
+
+        </div>
+    </section>
+    <!-- 9. 베너8 -->
+    <section class="section8 ibx">
+
+    </section>
+    <!-- 10. 베너9 -->
+    <section class="section9 ibx">
+
+    </section>
+    <!-- 11. 베너10 -->
+    <footer class="footer10 ibx">
+
+    </footer>
+
+</body>
+
+</html>
